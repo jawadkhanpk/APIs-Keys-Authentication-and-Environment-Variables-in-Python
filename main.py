@@ -11,6 +11,7 @@ weather_params ={
 }
 
 responce = requests.get(OpenWeather_Endpoint,params=weather_params)
+responce.raise_for_status()
 
 print(responce.status_code)
 print(responce.json())
